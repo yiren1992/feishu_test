@@ -1,0 +1,29 @@
+create:
+  - summary: 测试a
+    description: 测试a
+    permissions: public
+    color: -1
+    summary_alias: ceshia
+  - summary: 测试b
+    description: 测试b
+    permissions: private
+    color: -1
+    summary_alias: ceshib
+
+update:
+  - calendar_id: feishu.cn_nCBZbyS9c8JP1VFziJD7Df@group.calendar.feishu.cn
+    summary: 测试aa
+    description: 测试aa
+    permissions: public
+    color: -1
+    summary_alias: ceshiaa
+  - calendar_id: feishu.cn_Vsp3BaFn0DKPadbH2mNp2f@group.calendar.feishu.cn
+    summary: 测试bb
+    description: 测试bb
+    permissions: private
+    color: -1
+    summary_alias: ceshibb
+
+search:
+  - '测试'
+  - '12345'
