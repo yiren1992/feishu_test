@@ -45,6 +45,7 @@ class CalendarHttp(BasePage):
             "Authorization": f"Bearer {self.token}"
         }
         r = self.send('DELETE', url, headers=header)
+        print(r.json())
         return r.json()
 
     def get(self, calendar_id):

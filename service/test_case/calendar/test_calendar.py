@@ -35,7 +35,8 @@ class TestCalendar(BaseCalTestCase):
     @pytest.mark.parametrize('calendar_id', ['feishu.cn_Vsp3BaFn0DKPadbH2mNp2f@group.calendar.feishu.cn'])
     def test_delete(self, calendar_id):
         r = self.cal.delete(calendar_id)
-        assert r['code'] == 0, r['msg'] == 'success'
+        assert r['code'] == 191003
+        assert r['msg'] == 'calendar is deleted'
 
     @allure.story('获取日历')
     @allure.title('获取日历:{calendar_id}')
@@ -57,7 +58,9 @@ class TestCalendar(BaseCalTestCase):
     def test_update(self, dic):
         r = self.cal.update(dic['calendar_id'], dic['summary'], dic['description'], dic['permissions'], dic['color'],
                             dic['summary_alias'])
-        assert r['code'] == 0, r['summary'] == dic['summary']
+        assert r['code'] == 0 or r['code'] == 191003
+        if r['code'] == 191003:
+            assert r['msg'] == 'calendar is deleted'
 
     @allure.story('搜索日历')
     @allure.title('搜索日历:{query}')
